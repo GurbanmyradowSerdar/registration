@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* ! aside component */
+  .aside-component {
+    background-image: url(./buildings.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40vw 100vh;
+  }
+  .aside-component-bg-icons {
+    background-image: url(./dots-bg.svg), url(./circle-bg.svg);
+    background-repeat: no-repeat;
+    background-position: 85% 20%, -12% 102%;
+    background-size: 10vw 10vh, 13vw 13vh;
+  }
+}
