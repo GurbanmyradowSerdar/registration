@@ -16,10 +16,13 @@ import { useState } from "react";
 import PrimaryButton from "../../common/buttons/PrimaryButton";
 import { countries } from "../../../data";
 import UnderPrimaryButton from "../../common/buttons/UnderPrimaryButton";
+import { useSetRecoilState } from "recoil";
+import { pageIndexState } from "../../../store/atoms";
 
 const ThirdPageComponent = () => {
   const [country, setCountry] = useState<CountryCode>("TM");
   const [isOpen, setIsOpen] = useState(false);
+  const setIndex = useSetRecoilState(pageIndexState);
   const formik = useFormik<TFormikInitialValuesThirdPage>({
     initialValues: {
       address: "",
@@ -32,6 +35,7 @@ const ThirdPageComponent = () => {
         phone number: ${values.phoneNumber}
         address: ${values.address}
         country of residence : ${values.countryOfResidence}`);
+      setIndex(3);
     },
   });
 

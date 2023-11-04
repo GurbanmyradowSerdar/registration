@@ -1,4 +1,6 @@
-import { INavigationComponent } from "../../types";
+import { pageIndexState } from "../../store/atoms";
+import { INavigationComponent, TPageIndexState } from "../../types";
+import { useRecoilState } from "recoil";
 
 const NavigationComponent = ({
   hasBackButton,
@@ -6,11 +8,15 @@ const NavigationComponent = ({
   step,
   className,
 }: INavigationComponent) => {
+  const [index, setIndex] = useRecoilState(pageIndexState);
   return hasBackButton ? (
     <div
       className={`flex items-center justify-between font-Inter ${className}`}
     >
-      <button className="flex items-center justify-center gap-2 group">
+      <button
+        className="flex items-center justify-center gap-2 group"
+        onClick={() => setIndex(getPrevPageIndex(index))}
+      >
         <svg
           width="10"
           height="18"
@@ -47,3 +53,18 @@ const NavigationComponent = ({
 };
 
 export default NavigationComponent;
+
+function getPrevPageIndex(pageIndex: TPageIndexState): TPageIndexState {
+  switch (pageIndex) {
+    case 1:
+      return 0;
+
+    case 2:
+      return 1;
+
+    case 3:
+      return 2;
+    default:
+      return pageIndex;
+  }
+}

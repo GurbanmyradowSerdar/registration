@@ -61,3 +61,6 @@ export type TFormikInitialValuesThirdPage = {
   address: string;
   countryOfResidence: string;
 };
+
+// ! atoms store
+export type TPageIndexState = 0 | 1 | 2 | 3;
