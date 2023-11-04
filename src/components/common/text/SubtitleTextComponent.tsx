@@ -1,4 +1,4 @@
-import { ITextProps } from "../../types";
+import { ITextProps } from "../../../types";
 
 const SubtitleTextComponent = ({ text, className }: ITextProps) => {
   return (

@@ -19,6 +19,10 @@ export const navigationInfoArr = [
     info: "Personal Info.",
   },
   {
+    step: "01",
+    info: "Personal Info.",
+  },
+  {
     step: "02",
     info: "Residency Info.",
   },
@@ -26,4 +30,15 @@ export const navigationInfoArr = [
     step: "03",
     info: "Bank Verification",
   },
+];
+
+// ! 3 page
+export const countries = [
+  "United States",
+  "Canada",
+  "Australia",
+  "United Kingdom",
+  "Turkmenistan",
+  "Turkey",
+  "Afghanistan",
 ];

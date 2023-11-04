@@ -1,11 +1,11 @@
 import { useState } from "react";
-import CustomInput from "../CustomInput";
-import Divider from "../common/Divider";
-import MainTitle from "../common/MainTitle";
-import PrimaryButton from "../common/PrimaryButton";
-import SubtitleTextComponent from "../common/SubtitleTextComponent";
+import CustomInput from "../../common/CustomInput";
+import Divider from "../../common/Divider";
+import MainTitle from "../../common/text/MainTitle";
+import PrimaryButton from "../../common/buttons/PrimaryButton";
+import SubtitleTextComponent from "../../common/text/SubtitleTextComponent";
 import { useFormik } from "formik";
-import { TFormikInitialValuesSecondPage, TVisible } from "../../types";
+import { TFormikInitialValuesSecondPage, TVisible } from "../../../types";
 import { validate } from "./validation";
 
 const SecondPageContent = () => {
@@ -27,7 +27,7 @@ const SecondPageContent = () => {
     },
   });
   return (
-    <div className="mt-14 max-w-md space-y-4">
+    <div className="mt-14 space-y-4 max-w-md">
       <div className="space-y-2">
         <MainTitle text="Register Individual Accaunt!" />
         <SubtitleTextComponent text="For the purpose of industry regulation, your details are required." />
@@ -108,7 +108,10 @@ const SecondPageContent = () => {
             Or
             <Divider />
           </div>
-          <button className="flex items-center shadow-[0px_6px_15px_rgba(0,0,0,0.1)] w-full px-11 py-4 rounded-lg gap-16">
+          <button
+            type="button"
+            className="flex items-center shadow-[0px_6px_15px_rgba(0,0,0,0.1)] w-full px-11 py-4 rounded-lg gap-16"
+          >
             <img src="./google.svg" alt="google" />
             <p className="font-medium">Register with Google</p>
           </button>

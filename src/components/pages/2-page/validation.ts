@@ -1,4 +1,4 @@
-import { TFormikInitialValuesSecondPage } from "../../types";
+import { TFormikInitialValuesSecondPage } from "../../../types";
 
 export const validate = (values: TFormikInitialValuesSecondPage) => {
   const errors: Partial<TFormikInitialValuesSecondPage> = {};

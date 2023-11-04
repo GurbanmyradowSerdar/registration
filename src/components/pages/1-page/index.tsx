@@ -1,5 +1,5 @@
-import MainTitle from "../common/MainTitle";
-import SubtitleTextComponent from "../common/SubtitleTextComponent";
+import MainTitle from "../../common/text/MainTitle";
+import SubtitleTextComponent from "../../common/text/SubtitleTextComponent";
 
 const FirstPageContent = () => {
   return (

@@ -35,13 +35,14 @@ export interface IInteractiveWrapperProps extends IParentComponent {
 // ! custom input
 export interface ICustomInputProps extends IClassName {
   name: string;
-  type: HTMLInputTypeAttribute;
-  value: string;
-  onChange: (e: ChangeEvent<any>) => void;
+  type?: HTMLInputTypeAttribute;
+  value?: string;
+  onChange?: (e: ChangeEvent<any>) => void;
   label: string;
-  placeholder: string;
+  placeholder?: string;
   maxLength?: number;
   error?: string;
+  anotherInput?: React.ReactNode;
 }
 
 // ! 2 page content
@@ -53,3 +54,10 @@ export type TFormikInitialValuesSecondPage = {
 };
 
 export type TVisible = "text" | "password";
+
+// ! 3 page content
+export type TFormikInitialValuesThirdPage = {
+  phoneNumber: string;
+  address: string;
+  countryOfResidence: string;
+};
