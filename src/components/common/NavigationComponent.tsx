@@ -1,6 +1,12 @@
 import { pageIndexState } from "../../store/atoms";
-import { INavigationComponent, TPageIndexState } from "../../types";
-import { useRecoilState } from "recoil";
+import {
+  INavigationComponent,
+  TFormikInitialValuesSecondPage,
+  TFormikInitialValuesThirdPage,
+  TPageIndexState,
+} from "../../types";
+import { useRecoilState, useSetRecoilState, SetterOrUpdater } from "recoil";
+import { credentialsState, additionalInfoState } from "../../store/atoms";
 
 const NavigationComponent = ({
   hasBackButton,
@@ -9,13 +15,17 @@ const NavigationComponent = ({
   className,
 }: INavigationComponent) => {
   const [index, setIndex] = useRecoilState(pageIndexState);
+  const setCredentials = useSetRecoilState(credentialsState);
+  const setAdditionalInfo = useSetRecoilState(additionalInfoState);
   return hasBackButton ? (
     <div
       className={`flex items-center justify-between font-Inter ${className}`}
     >
       <button
         className="flex items-center justify-center gap-2 group"
-        onClick={() => setIndex(getPrevPageIndex(index))}
+        onClick={() =>
+          setIndex(getPrevPageIndex(index, setCredentials, setAdditionalInfo))
+        }
       >
         <svg
           width="10"
@@ -54,12 +64,32 @@ const NavigationComponent = ({
 
 export default NavigationComponent;
 
-function getPrevPageIndex(pageIndex: TPageIndexState): TPageIndexState {
+function getPrevPageIndex(
+  pageIndex: TPageIndexState,
+  setCredentials: SetterOrUpdater<TFormikInitialValuesSecondPage>,
+  setInfo: SetterOrUpdater<TFormikInitialValuesThirdPage>
+): TPageIndexState {
   switch (pageIndex) {
     case 1:
+      setCredentials({
+        email: "",
+        fullName: "",
+        password: "",
+        toggle: false,
+      });
+      setInfo({
+        address: "",
+        countryOfResidence: "",
+        phoneNumber: "",
+      });
       return 0;
 
     case 2:
+      setInfo({
+        address: "",
+        countryOfResidence: "",
+        phoneNumber: "",
+      });
       return 1;
 
     case 3:

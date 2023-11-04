@@ -7,18 +7,19 @@ import SubtitleTextComponent from "../../common/text/SubtitleTextComponent";
 import { useFormik } from "formik";
 import { TFormikInitialValuesSecondPage, TVisible } from "../../../types";
 import { validate } from "./validation";
-import { useSetRecoilState } from "recoil";
-import { pageIndexState } from "../../../store/atoms";
+import { useSetRecoilState, useRecoilState } from "recoil";
+import { pageIndexState, credentialsState } from "../../../store/atoms";
 
 const SecondPageContent = () => {
   const [visible, setVisible] = useState<TVisible>("password");
   const setIndex = useSetRecoilState(pageIndexState);
+  const [credentials, setCredentials] = useRecoilState(credentialsState);
   const formik = useFormik<TFormikInitialValuesSecondPage>({
     initialValues: {
-      fullName: "",
-      email: "",
-      password: "",
-      toggle: false,
+      fullName: credentials.fullName,
+      email: credentials.email,
+      password: credentials.password,
+      toggle: credentials.toggle,
     },
     validate,
     onSubmit: (values) => {
@@ -28,6 +29,12 @@ const SecondPageContent = () => {
         password : ${values.password}
         checked : ${values.toggle}`);
       setIndex(2);
+      setCredentials({
+        email: values.email,
+        fullName: values.fullName,
+        password: values.password,
+        toggle: values.toggle,
+      });
     },
   });
   return (

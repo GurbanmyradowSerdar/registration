@@ -16,18 +16,22 @@ import { useState } from "react";
 import PrimaryButton from "../../common/buttons/PrimaryButton";
 import { countries } from "../../../data";
 import UnderPrimaryButton from "../../common/buttons/UnderPrimaryButton";
-import { useSetRecoilState } from "recoil";
-import { pageIndexState } from "../../../store/atoms";
+import { useSetRecoilState, useRecoilState } from "recoil";
+import { pageIndexState, additionalInfoState } from "../../../store/atoms";
 
 const ThirdPageComponent = () => {
   const [country, setCountry] = useState<CountryCode>("TM");
   const [isOpen, setIsOpen] = useState(false);
   const setIndex = useSetRecoilState(pageIndexState);
+  const [info, setInfo] = useRecoilState(additionalInfoState);
   const formik = useFormik<TFormikInitialValuesThirdPage>({
     initialValues: {
-      address: "",
-      countryOfResidence: "",
-      phoneNumber: `+${getCountryCallingCode(country)}`,
+      address: info.address,
+      countryOfResidence: info.countryOfResidence,
+      phoneNumber:
+        info.phoneNumber.length > 0
+          ? info.phoneNumber
+          : `+${getCountryCallingCode(country)}`,
     },
     validate,
     onSubmit: (values) => {
@@ -36,6 +40,11 @@ const ThirdPageComponent = () => {
         address: ${values.address}
         country of residence : ${values.countryOfResidence}`);
       setIndex(3);
+      setInfo({
+        address: values.address,
+        countryOfResidence: values.countryOfResidence,
+        phoneNumber: values.phoneNumber,
+      });
     },
   });
 
