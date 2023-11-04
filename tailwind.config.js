@@ -8,9 +8,10 @@ export default {
         Roboto: ["Roboto", "sans-serif"],
         Gayathri: ["Gayathri", "sans-serif"],
       },
-    },
-    colors: {
-      "primary-color": "#1565D8",
+      colors: {
+        "primary-color": "#1565D8",
+        "bold-gray": "#696F79",
+      },
     },
   },
   plugins: [],

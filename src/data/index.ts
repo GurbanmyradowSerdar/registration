@@ -12,3 +12,18 @@ export const textBlocks = [
   brought about significant advancements in various industries. 
   AI technologies, such as machine learning and natural language.`,
 ];
+
+export const navigationInfoArr = [
+  {
+    step: "01",
+    info: "Personal Info.",
+  },
+  {
+    step: "02",
+    info: "Residency Info.",
+  },
+  {
+    step: "03",
+    info: "Bank Verification",
+  },
+];

@@ -1,3 +1,5 @@
+import { ChangeEvent, HTMLInputTypeAttribute } from "react";
+
 // ! class name interface
 export interface IClassName {
   className?: string;
@@ -24,3 +26,30 @@ export interface IAsideTextComponent extends IClassName {
 export interface ITextProps extends IClassName {
   text: string;
 }
+
+// ! interactive wrapper component
+export interface IInteractiveWrapperProps extends IParentComponent {
+  pageIndex: number;
+}
+
+// ! custom input
+export interface ICustomInputProps extends IClassName {
+  name: string;
+  type: HTMLInputTypeAttribute;
+  value: string;
+  onChange: (e: ChangeEvent<any>) => void;
+  label: string;
+  placeholder: string;
+  maxLength?: number;
+  error?: string;
+}
+
+// ! 2 page content
+export type TFormikInitialValuesSecondPage = {
+  fullName: string;
+  email: string;
+  password: string;
+  toggle: boolean;
+};
+
+export type TVisible = "text" | "password";
