@@ -40,13 +40,20 @@ const SecondPageContent = () => {
     },
   });
   return (
-    <div className="mt-14 space-y-4 max-w-md">
+    <div
+      className="mt-14 space-y-4 max-w-md
+    max-xl:max-w-sm"
+    >
       <div className="space-y-2">
         <MainTitle text="Register Individual Accaunt!" />
         <SubtitleTextComponent text="For the purpose of industry regulation, your details are required." />
       </div>
       <Divider />
-      <form onSubmit={formik.handleSubmit} className="font-Inter space-y-6">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="font-Inter space-y-6
+      max-2xl:space-y-5"
+      >
         <CustomInput
           label="Your fullname*"
           name="fullName"
@@ -67,9 +74,16 @@ const SecondPageContent = () => {
           placeholder="Enter email address"
         />
         <div className="flex flex-col gap-2">
-          <label htmlFor="password" className="font-medium text-bold-gray">
+          <label
+            htmlFor="password"
+            className="font-medium text-bold-gray
+          max-2xl:text-sm"
+          >
             Create password*{" "}
-            <span className="text-red-500 text-sm">
+            <span
+              className="text-red-500 text-sm
+            max-2xl:text-xs"
+            >
               {formik.errors.password}
             </span>
           </label>
@@ -81,7 +95,8 @@ const SecondPageContent = () => {
               onChange={formik.handleChange}
               value={formik.values.password}
               className="border border-bold-gray pl-6 pr-20 py-4 rounded-lg duration-300 transition-all w-full
-              placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl"
+              placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl
+              max-2xl:pl-5 max-2xl:py-3"
               placeholder="Enter password"
             />
             <button
@@ -106,14 +121,17 @@ const SecondPageContent = () => {
             focus-visible:outline-offset-2 focus-visible:outline-primary-color"
           />
           <p
-            className="text-bold-gray font-medium"
+            className="text-bold-gray font-medium max-2xl:text-sm"
             style={{ color: formik.errors.toggle ? "red" : "" }}
           >
             I agree to terms & conditions
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div
+          className="space-y-3
+        max-2xl:space-y-2"
+        >
           <PrimaryButton text="Register Account" disabled={disabled} />
           <div className="flex items-center justify-center text-[#BABABA] gap-10">
             <Divider />
@@ -122,7 +140,8 @@ const SecondPageContent = () => {
           </div>
           <button
             type="button"
-            className="flex items-center shadow-[0px_6px_15px_rgba(0,0,0,0.1)] w-full px-11 py-4 rounded-lg gap-16"
+            className="flex items-center shadow-[0px_6px_15px_rgba(0,0,0,0.1)] w-full px-11 py-4 rounded-lg gap-16
+            max-xl:py-3"
           >
             <img src="./google.svg" alt="google" />
             <p className="font-medium">Register with Google</p>

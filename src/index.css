@@ -11,7 +11,7 @@
     background-image: url(./buildings.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 40vw 100vh;
+    background-size: 40vw 100%;
   }
   .aside-component-bg-icons {
     background-image: url(./dots-bg.svg), url(./circle-bg.svg);

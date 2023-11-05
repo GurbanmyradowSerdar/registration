@@ -32,13 +32,20 @@ const FourthPageComponent = () => {
     },
   });
   return (
-    <div className="space-y-4 max-w-md mt-44">
+    <div
+      className="space-y-4 max-w-md mt-44
+    max-2xl:mt-36
+    max-xl:max-w-sm max-xl:mt-28"
+    >
       <div className="space-y-3">
         <MainTitle text="Complete Your Profile!" />
         <SubtitleTextComponent text="For the purpose of industry regulation, your details are required." />
         <Divider />
       </div>
-      <form onSubmit={formik.handleSubmit} className="space-y-20">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="space-y-20 max-2xl:space-y-16"
+      >
         <CustomInput
           label="Bank verification number (BVN)"
           name="bvn"
@@ -54,7 +61,8 @@ const FourthPageComponent = () => {
                 value={formik.values.bvn}
                 onChange={formik.handleChange}
                 className="w-full border border-bold-gray px-6 py-4 rounded-lg duration-300 transition-all 
-                placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl"
+                placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl
+                max-2xl:px-5 max-2xl:py-3"
               />
               <img
                 src="./check.svg"

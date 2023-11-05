@@ -21,7 +21,8 @@ export function OptionButton({
     <button
       {...props}
       className="group shadow-xl rounded-lg p-7 flex items-center justify-between transition-all duration-300 outline outline-[#fff] 
-    hover:outline-2 hover:outline-primary-color hover:bg-[#F5F9FF]"
+    hover:outline-2 hover:outline-primary-color hover:bg-[#F5F9FF]
+    max-2xl:p-6"
     >
       <div className="flex items-center justify-center gap-7">
         <div className="flex items-center justify-center relative">
@@ -48,7 +49,9 @@ export function OptionButton({
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-10 h-10 p-2 z-10"
+                className="w-10 h-10 p-2 z-10
+                max-2xl:w-8 max-2xl:h-8 max-2xl:p-1
+                max-xl:w-6 max-xl:h-6 max-xl:p-0"
               >
                 <path
                   fillRule="evenodd"
@@ -70,7 +73,9 @@ export function OptionButton({
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-10 h-10 p-2 z-10"
+                className="w-10 h-10 p-2 z-10
+                max-2xl:w-8 max-2xl:h-8 max-2xl:p-1
+                max-xl:w-6 max-xl:h-6 max-xl:p-0"
               >
                 <path
                   fillRule="evenodd"
@@ -89,8 +94,16 @@ export function OptionButton({
           </>
         </div>
         <div className="flex flex-col text-left max-w-[280px]">
-          <MainTitle text={title} className="text-base" />
-          <SubtitleTextComponent text={text} className="text-sm leading-6" />
+          <MainTitle
+            text={title}
+            className="text-base max-2xl:text-[15px]
+          max-xl:text-[15px]"
+          />
+          <SubtitleTextComponent
+            text={text}
+            className="text-sm leading-6 max-2xl:text-[13px]
+            max-xl:text-[13px]"
+          />
         </div>
       </div>
       <img

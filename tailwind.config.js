@@ -12,6 +12,13 @@ export default {
         "primary-color": "#1565D8",
         "bold-gray": "#696F79",
       },
+      screens: {
+        "2xl": "1537px",
+        xl: "1281px",
+        lg: "1025px",
+        md: "769px",
+        sm: "641px",
+      },
     },
   },
   plugins: [],

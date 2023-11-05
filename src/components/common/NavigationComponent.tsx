@@ -39,20 +39,34 @@ const NavigationComponent = ({
             className="fill-bold-gray transition-colors duration-300 group-hover:fill-[#626973] group-active:fill-bold-gray"
           />
         </svg>
-        <p className="text-bold-gray font-semibold text-lg transition-colors duration-300 group-hover:text-[#626973] group-active:text-bold-gray">
+        <p
+          className="text-bold-gray font-semibold text-lg transition-colors duration-300 group-hover:text-[#626973] group-active:text-bold-gray
+        max-xl:text-base"
+        >
           Back
         </p>
       </button>
       <div className="flex flex-col gap-1">
-        <p className="text-[#BDBDBD] font-medium text-sm uppercase">
+        <p
+          className="text-[#BDBDBD] font-medium text-sm uppercase
+        max-xl:text-xs"
+        >
           step {step}/03
         </p>
-        <p className="text-bold-gray font-semibold">{info}</p>
+        <p
+          className="text-bold-gray font-semibold
+        max-xl:text-sm"
+        >
+          {info}
+        </p>
       </div>
     </div>
   ) : (
     <div className={`${className} flex items-center justify-end font-Inter`}>
-      <p className="text-bold-gray text-lg">
+      <p
+        className="text-bold-gray text-lg
+      max-xl:text-base"
+      >
         Already have an account?{" "}
         <span className="text-[#1565D8] font-medium cursor-pointer">
           Sign in

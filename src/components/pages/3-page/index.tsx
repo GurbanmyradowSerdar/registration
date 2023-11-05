@@ -53,13 +53,21 @@ const ThirdPageComponent = () => {
   });
 
   return (
-    <div className="mt-14 space-y-4 max-w-md">
+    <div
+      className="mt-14 space-y-4 max-w-md
+    max-2xl:mt-12
+    max-xl:max-w-sm"
+    >
       <div className="space-y-3">
         <MainTitle text="Complete Your Profile!" />
         <SubtitleTextComponent text="For the purpose of industry regulation, your details are required." />
         <Divider />
       </div>
-      <form onSubmit={formik.handleSubmit} className="space-y-6">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="space-y-6
+      max-2xl:space-y-5"
+      >
         <CustomInput
           label="Phone number"
           name="phoneNumber"
@@ -95,7 +103,8 @@ const ThirdPageComponent = () => {
                 value={formik.values.phoneNumber}
                 className="border border-bold-gray pr-6 pl-44 py-4 rounded-lg duration-300 transition-all 
                 placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl
-                relative w-full"
+                relative w-full
+                max-2xl:pr-5 max-2xl:py-3"
                 onChange={(e) => {
                   formik.setValues({
                     ...formik.values,
@@ -124,7 +133,8 @@ const ThirdPageComponent = () => {
             <div className="relative">
               <select
                 className="appearance-none w-full border border-bold-gray px-6 py-4 rounded-lg duration-300 transition-all 
-            placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl"
+            placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl
+            max-2xl:px-5 max-2xl:py-3"
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
