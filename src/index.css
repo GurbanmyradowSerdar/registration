@@ -8,13 +8,13 @@
 @layer components {
   /* ! aside component */
   .aside-component {
-    background-image: url(./buildings.jpg);
+    background-image: url(../public/buildings.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40vw 100%;
   }
   .aside-component-bg-icons {
-    background-image: url(./dots-bg.svg), url(./circle-bg.svg);
+    background-image: url(../public/dots-bg.svg), url(../public/circle-bg.svg);
     background-repeat: no-repeat;
     background-position: 85% 20%, -12% 102%;
     background-size: 10vw 10vh, 13vw 13vh;
