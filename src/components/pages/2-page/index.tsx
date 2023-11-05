@@ -14,6 +14,7 @@ const SecondPageContent = () => {
   const [visible, setVisible] = useState<TVisible>("password");
   const setIndex = useSetRecoilState(pageIndexState);
   const [credentials, setCredentials] = useRecoilState(credentialsState);
+  const [disabled, setDisabled] = useState(false);
   const formik = useFormik<TFormikInitialValuesSecondPage>({
     initialValues: {
       fullName: credentials.fullName,
@@ -23,6 +24,7 @@ const SecondPageContent = () => {
     },
     validate,
     onSubmit: (values) => {
+      setDisabled(true);
       alert(` 
         fullName: ${values.fullName}
         email: ${values.email}
@@ -44,7 +46,6 @@ const SecondPageContent = () => {
         <SubtitleTextComponent text="For the purpose of industry regulation, your details are required." />
       </div>
       <Divider />
-      {/* ! form start */}
       <form onSubmit={formik.handleSubmit} className="font-Inter space-y-6">
         <CustomInput
           label="Your fullname*"
@@ -113,7 +114,7 @@ const SecondPageContent = () => {
         </div>
 
         <div className="space-y-3">
-          <PrimaryButton text="Register Account" />
+          <PrimaryButton text="Register Account" disabled={disabled} />
           <div className="flex items-center justify-center text-[#BABABA] gap-10">
             <Divider />
             Or

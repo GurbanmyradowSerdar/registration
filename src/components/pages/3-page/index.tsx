@@ -24,6 +24,8 @@ const ThirdPageComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const setIndex = useSetRecoilState(pageIndexState);
   const [info, setInfo] = useRecoilState(additionalInfoState);
+  const [disabled, setDisabled] = useState(false);
+
   const formik = useFormik<TFormikInitialValuesThirdPage>({
     initialValues: {
       address: info.address,
@@ -35,10 +37,12 @@ const ThirdPageComponent = () => {
     },
     validate,
     onSubmit: (values) => {
+      setDisabled(true);
       alert(` 
         phone number: ${values.phoneNumber}
         address: ${values.address}
         country of residence : ${values.countryOfResidence}`);
+      // ! going to next page
       setIndex(3);
       setInfo({
         address: values.address,
@@ -148,7 +152,7 @@ const ThirdPageComponent = () => {
           }
         />
         <div className="pt-3 space-y-4">
-          <PrimaryButton text="Save & Continue" />
+          <PrimaryButton text="Save & Continue" disabled={disabled} />
           <UnderPrimaryButton />
         </div>
       </form>

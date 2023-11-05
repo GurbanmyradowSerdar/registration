@@ -1,8 +1,9 @@
 import { ITextProps } from "../../../types";
 
-const PrimaryButton = ({ text }: ITextProps) => {
+const PrimaryButton = ({ text, disabled }: ITextProps) => {
   return (
     <button
+      disabled={disabled}
       type="submit"
       className="flex w-full justify-center rounded-lg bg-primary-color font-Inter font-medium py-4 px-32
       text-white duration-300 transition-all hover:bg-[#1566d8ea] focus-visible:outline focus-visible:outline-2 

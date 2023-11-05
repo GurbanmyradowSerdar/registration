@@ -25,6 +25,7 @@ export interface IAsideTextComponent extends IClassName {
 // ! main content
 export interface ITextProps extends IClassName {
   text: string;
+  disabled?: boolean;
 }
 
 // ! interactive wrapper component

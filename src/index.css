@@ -19,4 +19,18 @@
     background-position: 85% 20%, -12% 102%;
     background-size: 10vw 10vh, 13vw 13vh;
   }
+
+  .aside-text-animation {
+    animation: aside-animation 0.5s ease-in-out;
+  }
+  @keyframes aside-animation {
+    0% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 }

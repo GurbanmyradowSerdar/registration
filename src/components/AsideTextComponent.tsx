@@ -10,7 +10,7 @@ const AsideTextComponent = ({ className, text }: IAsideTextComponent) => {
         <img src="./logo.svg" alt="logo" />
         <h2 className="font-Roboto">Oasis.</h2>
       </nav>
-      <div className="z-10 flex flex-col gap-5">
+      <div className="z-10 flex flex-col gap-5 aside-text-animation" key={text}>
         <div className="flex flex-col">
           <p className="font-Gayathri text-8xl leading-[0px] text-[#00DAF7]">
             “

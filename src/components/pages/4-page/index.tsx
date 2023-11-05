@@ -5,8 +5,10 @@ import PrimaryButton from "../../common/buttons/PrimaryButton";
 import UnderPrimaryButton from "../../common/buttons/UnderPrimaryButton";
 import MainTitle from "../../common/text/MainTitle";
 import SubtitleTextComponent from "../../common/text/SubtitleTextComponent";
+import { useState } from "react";
 
 const FourthPageComponent = () => {
+  const [disabled, setDisabled] = useState(false);
   const formik = useFormik({
     initialValues: {
       bvn: "",
@@ -25,6 +27,7 @@ const FourthPageComponent = () => {
       return errors;
     },
     onSubmit: ({ bvn }) => {
+      setDisabled(true);
       alert(`Bank verification number : ${JSON.stringify(bvn)}`);
     },
   });
@@ -69,7 +72,7 @@ const FourthPageComponent = () => {
           }
         />
         <div className="pt-3 space-y-4">
-          <PrimaryButton text="Save & Continue" />
+          <PrimaryButton text="Save & Continue" disabled={disabled} />
           <UnderPrimaryButton />
         </div>
       </form>
