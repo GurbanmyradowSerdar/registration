@@ -101,7 +101,7 @@ const SecondPageContent = () => {
               placeholder="Enter password"
             />
             <button
-              className="remove-tap-highlight absolute top-2/4 -translate-y-2/4 right-0 text-sm cursor-pointer hover:font-mediumpx-6 py-4
+              className="absolute top-2/4 -translate-y-2/4 right-0 text-sm cursor-pointer hover:font-mediumpx-6 py-4
               max-2xl:px-5 max-2xl:py-3"
               onClick={() =>
                 setVisible(visible === "text" ? "password" : "text")

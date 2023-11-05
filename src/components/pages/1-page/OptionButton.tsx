@@ -20,7 +20,7 @@ export function OptionButton({
   return (
     <button
       {...props}
-      className="remove-tap-highlight group shadow-xl rounded-lg p-7 flex items-center justify-between transition-all duration-300 outline outline-[#fff] 
+      className="group shadow-xl rounded-lg p-7 flex items-center justify-between transition-all duration-300 outline outline-[#fff] 
     hover:outline-2 hover:outline-primary-color hover:bg-[#F5F9FF]
     max-2xl:p-6"
     >

@@ -22,7 +22,7 @@ const NavigationComponent = ({
       className={`flex items-center justify-between font-Inter ${className} max-sm:justify-between`}
     >
       <button
-        className="remove-tap-highlight flex items-center justify-center gap-2 group"
+        className="flex items-center justify-center gap-2 group"
         onClick={() =>
           setIndex(getPrevPageIndex(index, setCredentials, setAdditionalInfo))
         }
@@ -73,9 +73,9 @@ const NavigationComponent = ({
       max-md:text-sm"
       >
         Already have an account?{" "}
-        <span className="text-[#1565D8] font-medium cursor-pointer">
+        <button className="text-[#1565D8] font-medium cursor-pointer">
           Sign in
-        </span>
+        </button>
       </p>
     </div>
   );

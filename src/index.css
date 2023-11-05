@@ -34,8 +34,7 @@
     }
   }
 
-  /* ! removing tap highlight on elments */
-  .remove-tap-highlight {
+  button {
     -webkit-tap-highlight-color: transparent;
   }
 }
