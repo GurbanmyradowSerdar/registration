@@ -33,4 +33,9 @@
       transform: translateX(0px);
     }
   }
+
+  /* ! removing tap highlight on elments */
+  .remove-tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
 }

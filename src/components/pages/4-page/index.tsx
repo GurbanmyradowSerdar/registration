@@ -35,7 +35,8 @@ const FourthPageComponent = () => {
     <div
       className="space-y-4 max-w-md mt-44
     max-2xl:mt-36
-    max-xl:max-w-sm max-xl:mt-28"
+    max-xl:max-w-sm max-xl:mt-28
+    max-sm:max-w-xs"
     >
       <div className="space-y-3">
         <MainTitle text="Complete Your Profile!" />

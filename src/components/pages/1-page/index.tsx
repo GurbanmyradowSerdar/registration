@@ -11,7 +11,9 @@ const FirstPageContent = () => {
     <div
       className="flex flex-col max-w-md gap-9 mt-36
     max-2xl:gap-7 max-2xl:mt-24
-    max-xl:gap-5 max-xl:mt-16"
+    max-xl:gap-5 max-xl:mt-16
+    max-md:max-w-lg
+    max-sm:max-w-xs"
     >
       <div className="flex flex-col gap-2">
         <MainTitle text="Join us!" />

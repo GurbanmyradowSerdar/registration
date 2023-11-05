@@ -56,7 +56,8 @@ const ThirdPageComponent = () => {
     <div
       className="mt-14 space-y-4 max-w-md
     max-2xl:mt-12
-    max-xl:max-w-sm"
+    max-xl:max-w-sm
+    max-sm:max-w-xs"
     >
       <div className="space-y-3">
         <MainTitle text="Complete Your Profile!" />
@@ -76,7 +77,7 @@ const ThirdPageComponent = () => {
           anotherInput={
             <div className="relative">
               <select
-                className="absolute top-2/4 -translate-y-2/4 left-1 z-10 flex w-40 outline-none"
+                className="absolute top-2/4 -translate-y-2/4 left-1 z-10 flex w-40 outline-none bg-transparent"
                 value={country}
                 onChange={(event) => {
                   setCountry(event.target.value as CountryCode);
@@ -132,7 +133,7 @@ const ThirdPageComponent = () => {
           anotherInput={
             <div className="relative">
               <select
-                className="appearance-none w-full border border-bold-gray px-6 py-4 rounded-lg duration-300 transition-all 
+                className="appearance-none w-full bg-transparent border border-bold-gray px-6 py-4 rounded-lg duration-300 transition-all 
             placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl
             max-2xl:px-5 max-2xl:py-3"
                 onClick={() => {

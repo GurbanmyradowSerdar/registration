@@ -25,7 +25,11 @@ function App() {
     }
   }
   return (
-    <main className="flex min-h-screen">
+    <main
+      className="flex min-h-screen
+    max-lg:items-center max-lg:justify-center
+    max-sm:items-start"
+    >
       <AsideTextComponent text={textBlocks[index]} />
       <InteractiveWrapperComponent pageIndex={index}>
         {getPageComponent()}

@@ -20,11 +20,14 @@ export function OptionButton({
   return (
     <button
       {...props}
-      className="group shadow-xl rounded-lg p-7 flex items-center justify-between transition-all duration-300 outline outline-[#fff] 
+      className="remove-tap-highlight group shadow-xl rounded-lg p-7 flex items-center justify-between transition-all duration-300 outline outline-[#fff] 
     hover:outline-2 hover:outline-primary-color hover:bg-[#F5F9FF]
     max-2xl:p-6"
     >
-      <div className="flex items-center justify-center gap-7">
+      <div
+        className="flex items-center justify-center gap-7
+      max-lg:gap-12"
+      >
         <div className="flex items-center justify-center relative">
           <svg
             width="50"

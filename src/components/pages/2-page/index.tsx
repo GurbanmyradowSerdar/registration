@@ -42,7 +42,8 @@ const SecondPageContent = () => {
   return (
     <div
       className="mt-14 space-y-4 max-w-md
-    max-xl:max-w-sm"
+    max-xl:max-w-sm
+    max-sm:max-w-xs"
     >
       <div className="space-y-2">
         <MainTitle text="Register Individual Accaunt!" />
@@ -100,7 +101,8 @@ const SecondPageContent = () => {
               placeholder="Enter password"
             />
             <button
-              className="absolute top-2/4 -translate-y-2/4 right-5 text-sm cursor-pointer hover:font-medium"
+              className="remove-tap-highlight absolute top-2/4 -translate-y-2/4 right-0 text-sm cursor-pointer hover:font-mediumpx-6 py-4
+              max-2xl:px-5 max-2xl:py-3"
               onClick={() =>
                 setVisible(visible === "text" ? "password" : "text")
               }
@@ -135,13 +137,14 @@ const SecondPageContent = () => {
           <PrimaryButton text="Register Account" disabled={disabled} />
           <div className="flex items-center justify-center text-[#BABABA] gap-10">
             <Divider />
-            Or
+            <span className="max-sm:text-[15px]">Or</span>
             <Divider />
           </div>
           <button
             type="button"
             className="flex items-center shadow-[0px_6px_15px_rgba(0,0,0,0.1)] w-full px-11 py-4 rounded-lg gap-16
-            max-xl:py-3"
+            max-xl:py-3
+            max-sm:px-5 max-sm:gap-10"
           >
             <img src="./google.svg" alt="google" />
             <p className="font-medium">Register with Google</p>

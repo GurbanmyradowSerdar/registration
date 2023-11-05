@@ -19,10 +19,10 @@ const NavigationComponent = ({
   const setAdditionalInfo = useSetRecoilState(additionalInfoState);
   return hasBackButton ? (
     <div
-      className={`flex items-center justify-between font-Inter ${className}`}
+      className={`flex items-center justify-between font-Inter ${className} max-sm:justify-between`}
     >
       <button
-        className="flex items-center justify-center gap-2 group"
+        className="remove-tap-highlight flex items-center justify-center gap-2 group"
         onClick={() =>
           setIndex(getPrevPageIndex(index, setCredentials, setAdditionalInfo))
         }
@@ -33,6 +33,7 @@ const NavigationComponent = ({
           viewBox="0 0 10 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="max-md:w-4 max-md:h-4"
         >
           <path
             d="M9.86251 2.225L8.37918 0.75L0.137512 9L8.38751 17.25L9.86251 15.775L3.08751 9L9.86251 2.225Z"
@@ -41,7 +42,8 @@ const NavigationComponent = ({
         </svg>
         <p
           className="text-bold-gray font-semibold text-lg transition-colors duration-300 group-hover:text-[#626973] group-active:text-bold-gray
-        max-xl:text-base"
+        max-xl:text-base
+        max-md:text-sm"
         >
           Back
         </p>
@@ -49,13 +51,15 @@ const NavigationComponent = ({
       <div className="flex flex-col gap-1">
         <p
           className="text-[#BDBDBD] font-medium text-sm uppercase
-        max-xl:text-xs"
+        max-xl:text-xs
+        max-md:text-[11px]"
         >
           step {step}/03
         </p>
         <p
           className="text-bold-gray font-semibold
-        max-xl:text-sm"
+        max-xl:text-sm
+        max-md:text-[13px]"
         >
           {info}
         </p>
@@ -65,7 +69,8 @@ const NavigationComponent = ({
     <div className={`${className} flex items-center justify-end font-Inter`}>
       <p
         className="text-bold-gray text-lg
-      max-xl:text-base"
+      max-xl:text-base
+      max-md:text-sm"
       >
         Already have an account?{" "}
         <span className="text-[#1565D8] font-medium cursor-pointer">
