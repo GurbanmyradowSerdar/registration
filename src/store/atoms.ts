@@ -14,7 +14,7 @@ export const pageIndexState = atom<TPageIndexState>({
         localStorage.setItem("pageIndex", JSON.stringify(param));
       });
       setSelf(() => {
-        let returnValue: TPageIndexState =
+        const returnValue: TPageIndexState =
           localStorage.getItem("pageIndex") !== null
             ? JSON.parse(localStorage.getItem("pageIndex") as string)
             : 0;
@@ -38,7 +38,7 @@ export const credentialsState = atom<TFormikInitialValuesSecondPage>({
         localStorage.setItem("credentials", JSON.stringify(param));
       });
       setSelf(() => {
-        let returnValue: TFormikInitialValuesSecondPage =
+        const returnValue: TFormikInitialValuesSecondPage =
           localStorage.getItem("credentials") !== null
             ? JSON.parse(localStorage.getItem("credentials") as string)
             : {
@@ -66,7 +66,7 @@ export const additionalInfoState = atom<TFormikInitialValuesThirdPage>({
         localStorage.setItem("additionalInfo", JSON.stringify(param));
       });
       setSelf(() => {
-        let returnValue: TFormikInitialValuesThirdPage =
+        const returnValue: TFormikInitialValuesThirdPage =
           localStorage.getItem("additionalInfo") !== null
             ? JSON.parse(localStorage.getItem("additionalInfo") as string)
             : {

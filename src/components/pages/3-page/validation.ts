@@ -6,7 +6,7 @@ export const validate = ({
   countryOfResidence,
   phoneNumber,
 }: TFormikInitialValuesThirdPage) => {
-  let errors: Partial<TFormikInitialValuesThirdPage> = {};
+  const errors: Partial<TFormikInitialValuesThirdPage> = {};
   // if(address)
   if (phoneNumber.length === 0) {
     errors.phoneNumber = "Required";

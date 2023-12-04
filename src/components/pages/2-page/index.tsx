@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import CustomInput from "../../common/CustomInput";
 import Divider from "../../common/Divider";
-import MainTitle from "../../common/text/MainTitle";
 import PrimaryButton from "../../common/buttons/PrimaryButton";
-import SubtitleTextComponent from "../../common/text/SubtitleTextComponent";
 import { useFormik } from "formik";
 import { TFormikInitialValuesSecondPage, TVisible } from "../../../types";
 import { validate } from "./validation";
 import { useSetRecoilState, useRecoilState } from "recoil";
 import { pageIndexState, credentialsState } from "../../../store/atoms";
+import TitleSection from "./TitleSection";
 
 const SecondPageContent = () => {
   const [visible, setVisible] = useState<TVisible>("password");
   const setIndex = useSetRecoilState(pageIndexState);
   const [credentials, setCredentials] = useRecoilState(credentialsState);
   const [disabled, setDisabled] = useState(false);
+
   const formik = useFormik<TFormikInitialValuesSecondPage>({
     initialValues: {
       fullName: credentials.fullName,
@@ -39,17 +39,15 @@ const SecondPageContent = () => {
       });
     },
   });
+
+  const handleChangeInput = useCallback(formik.handleChange, []);
   return (
     <div
       className="mt-14 space-y-4 max-w-md
     max-xl:max-w-sm
     max-sm:max-w-xs"
     >
-      <div className="space-y-2">
-        <MainTitle text="Register Individual Accaunt!" />
-        <SubtitleTextComponent text="For the purpose of industry regulation, your details are required." />
-      </div>
-      <Divider />
+      <TitleSection />
       <form
         onSubmit={formik.handleSubmit}
         className="font-Inter space-y-6
@@ -58,7 +56,7 @@ const SecondPageContent = () => {
         <CustomInput
           label="Your fullname*"
           name="fullName"
-          onChange={formik.handleChange}
+          onChange={handleChangeInput}
           type="text"
           value={formik.values.fullName}
           maxLength={20}
@@ -68,7 +66,7 @@ const SecondPageContent = () => {
         <CustomInput
           label="Email address*"
           name="email"
-          onChange={formik.handleChange}
+          onChange={handleChangeInput}
           type="text"
           value={formik.values.email}
           error={formik.errors.email}
@@ -93,7 +91,7 @@ const SecondPageContent = () => {
               id="password"
               type={visible}
               name="password"
-              onChange={formik.handleChange}
+              onChange={handleChangeInput}
               value={formik.values.password}
               className="border border-bold-gray pl-6 pr-20 py-4 rounded-lg duration-300 transition-all w-full
               placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl
@@ -117,7 +115,7 @@ const SecondPageContent = () => {
           <input
             type="checkbox"
             name="toggle"
-            onChange={formik.handleChange}
+            onChange={handleChangeInput}
             checked={formik.values.toggle}
             className="w-4 h-4 rounded-lg focus-visible:outline focus-visible:outline-2 
             focus-visible:outline-offset-2 focus-visible:outline-primary-color"

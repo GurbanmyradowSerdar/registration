@@ -38,7 +38,7 @@ export interface ICustomInputProps extends IClassName {
   name: string;
   type?: HTMLInputTypeAttribute;
   value?: string;
-  onChange?: (e: ChangeEvent<any>) => void;
+  onChange?: (e: ChangeEvent<unknown>) => void;
   label: string;
   placeholder?: string;
   maxLength?: number;

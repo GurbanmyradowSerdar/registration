@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { ICustomInputProps } from "../../types";
 
 const CustomInput = ({
@@ -22,9 +23,7 @@ const CustomInput = ({
         {label}{" "}
         <span className="text-red-500 text-sm max-2xl:text-xs">{error}</span>
       </label>
-      {anotherInput ? (
-        anotherInput
-      ) : (
+      {anotherInput || (
         <input
           id={name}
           name={name}
@@ -42,4 +41,4 @@ const CustomInput = ({
   );
 };
 
-export default CustomInput;
+export default memo(CustomInput);

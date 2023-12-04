@@ -1,11 +1,9 @@
 import { useFormik } from "formik";
 import CustomInput from "../../common/CustomInput";
-import Divider from "../../common/Divider";
 import PrimaryButton from "../../common/buttons/PrimaryButton";
 import UnderPrimaryButton from "../../common/buttons/UnderPrimaryButton";
-import MainTitle from "../../common/text/MainTitle";
-import SubtitleTextComponent from "../../common/text/SubtitleTextComponent";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import TitleSection from "./TitleSection";
 
 const FourthPageComponent = () => {
   const [disabled, setDisabled] = useState(false);
@@ -14,7 +12,7 @@ const FourthPageComponent = () => {
       bvn: "",
     },
     validate: ({ bvn }) => {
-      let errors: { bvn?: string } = {};
+      const errors: { bvn?: string } = {};
 
       if (bvn.length < 12) {
         errors.bvn = "Required";
@@ -31,6 +29,9 @@ const FourthPageComponent = () => {
       alert(`Bank verification number : ${JSON.stringify(bvn)}`);
     },
   });
+
+  const handleChangeInput = useCallback(formik.handleChange, []);
+
   return (
     <div
       className="space-y-4 max-w-md mt-44
@@ -38,11 +39,7 @@ const FourthPageComponent = () => {
     max-xl:max-w-sm max-xl:mt-28
     max-sm:max-w-xs"
     >
-      <div className="space-y-3">
-        <MainTitle text="Complete Your Profile!" />
-        <SubtitleTextComponent text="For the purpose of industry regulation, your details are required." />
-        <Divider />
-      </div>
+      <TitleSection />
       <form
         onSubmit={formik.handleSubmit}
         className="space-y-20 max-2xl:space-y-16"
@@ -60,7 +57,7 @@ const FourthPageComponent = () => {
                 type="tel"
                 placeholder="Enter BVN"
                 value={formik.values.bvn}
-                onChange={formik.handleChange}
+                onChange={handleChangeInput}
                 className="w-full border border-bold-gray px-6 py-4 rounded-lg duration-300 transition-all 
                 placeholder:text-sm focus-within:outline focus-within:outline-primary-color focus-within:shadow-xl
                 max-2xl:px-5 max-2xl:py-3"
@@ -71,9 +68,9 @@ const FourthPageComponent = () => {
                 className="w-6 h-6 absolute top-2/4 right-6
                 opacity-0  transition-all duration-300"
                 style={{
-                  opacity: formik.values.bvn.length == 12 ? 1 : 0,
+                  opacity: !formik.errors.bvn ? 1 : 0,
                   transform: `translateY(-50%) ${
-                    formik.values.bvn.length == 12 ? " scale(1)" : "scale(0.5)"
+                    !formik.errors.bvn ? " scale(1)" : "scale(0.5)"
                   }`,
                 }}
               />
