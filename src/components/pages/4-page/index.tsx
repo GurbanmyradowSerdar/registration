@@ -7,6 +7,16 @@ import TitleSection from "./TitleSection";
 
 const FourthPageComponent = () => {
   const [disabled, setDisabled] = useState(false);
+  const [isRightInput, setIsRightInput] = useState(false);
+
+  const handleChangeTrue = useCallback(() => {
+    setIsRightInput(true);
+  }, []);
+
+  const handleChangeFalse = useCallback(() => {
+    setIsRightInput(false);
+  }, []);
+
   const formik = useFormik({
     initialValues: {
       bvn: "",
@@ -16,10 +26,14 @@ const FourthPageComponent = () => {
 
       if (bvn.length < 12) {
         errors.bvn = "Required";
+        handleChangeFalse();
+      } else {
+        handleChangeTrue();
       }
 
       if (isNaN(Number(bvn))) {
         errors.bvn = "Invalid number";
+        handleChangeFalse();
       }
 
       return errors;
@@ -68,9 +82,9 @@ const FourthPageComponent = () => {
                 className="w-6 h-6 absolute top-2/4 right-6
                 opacity-0  transition-all duration-300"
                 style={{
-                  opacity: !formik.errors.bvn ? 1 : 0,
+                  opacity: isRightInput ? 1 : 0,
                   transform: `translateY(-50%) ${
-                    !formik.errors.bvn ? " scale(1)" : "scale(0.5)"
+                    isRightInput ? "scale(1)" : "scale(0.5)"
                   }`,
                 }}
               />
