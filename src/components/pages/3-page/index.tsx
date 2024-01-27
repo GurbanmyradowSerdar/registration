@@ -22,7 +22,6 @@ const ThirdPageComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const setIndex = useSetRecoilState(pageIndexState);
   const [info, setInfo] = useRecoilState(additionalInfoState);
-  const [disabled, setDisabled] = useState(false);
 
   const formik = useFormik<TFormikInitialValuesThirdPage>({
     initialValues: {
@@ -35,7 +34,6 @@ const ThirdPageComponent = () => {
     },
     validate,
     onSubmit: (values) => {
-      setDisabled(true);
       alert(` 
         phone number: ${values.phoneNumber}
         address: ${values.address}

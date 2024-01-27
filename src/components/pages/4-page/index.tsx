@@ -6,7 +6,6 @@ import { useState, useCallback } from "react";
 import TitleSection from "./TitleSection";
 
 const FourthPageComponent = () => {
-  const [disabled, setDisabled] = useState(false);
   const [isRightInput, setIsRightInput] = useState(false);
 
   const handleChangeTrue = useCallback(() => {
@@ -39,7 +38,6 @@ const FourthPageComponent = () => {
       return errors;
     },
     onSubmit: ({ bvn }) => {
-      setDisabled(true);
       alert(`Bank verification number : ${JSON.stringify(bvn)}`);
     },
   });
