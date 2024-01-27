@@ -92,7 +92,7 @@ const FourthPageComponent = () => {
           }
         />
         <div className="pt-3 space-y-4">
-          <PrimaryButton text="Save & Continue" disabled={disabled} />
+          <PrimaryButton text="Save & Continue" />
           <UnderPrimaryButton />
         </div>
       </form>
