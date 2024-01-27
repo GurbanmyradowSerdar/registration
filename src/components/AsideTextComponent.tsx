@@ -1,12 +1,22 @@
-import { IAsideTextComponent } from "../types";
+import { IClassName } from "types";
+import { twMerge as tw } from "tailwind-merge";
+import { pageIndexState } from "store/atoms";
+import { useRecoilValue } from "recoil";
+import { textBlocks } from "data";
 
-const AsideTextComponent = ({ className, text }: IAsideTextComponent) => {
+const AsideTextComponent = ({ className }: IClassName) => {
+  const index = useRecoilValue(pageIndexState);
+  const text = textBlocks[index];
+
   return (
     <article
-      className={`${className} flex flex-col pl-20 pr-28 pt-16 aside-component flex-[0_0_40%] text-[#fff] relative gap-64
+      className={tw(
+        `flex flex-col pl-20 pr-28 pt-16 aside-component flex-[0_0_40%] text-[#fff] relative gap-64
       max-2xl:pl-16 max-2xl:pr-24 max-2xl:gap-48 
       max-xl:pr-16 max-xl:gap-40 max-xl:pt-10
-      max-lg:hidden`}
+      max-lg:hidden`,
+        className
+      )}
     >
       <div className="absolute w-full h-full left-0 top-0 bg-[rgba(21,101,216,0.8)] aside-component-bg-icons"></div>
       <nav className="z-10 flex items-end justify-start gap-2">

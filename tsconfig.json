@@ -23,6 +23,7 @@
     "paths": {
       "components/*": ["src/components/*"],
       "types": ["src/types/index.ts"],
+      "utils": ["src/utils/index.ts"],
       "hooks/*": ["src/hooks/*"],
       "data": ["src/data/index.ts"],
       "store/*": ["src/store/*"]

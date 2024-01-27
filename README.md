@@ -6,7 +6,7 @@
 
 1. Vite.js
 2. TailwindCss
-3. Formik.js
+3. React-Hook-Form.js
 4. Recoil
 5. Phone input
 6. TS

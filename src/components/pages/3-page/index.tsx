@@ -82,7 +82,7 @@ const ThirdPageComponent = () => {
       className="mt-14 space-y-4 max-w-md
     max-2xl:mt-12
     max-xl:max-w-sm
-    max-sm:max-w-xs"
+    max-sm:max-w-md"
     >
       <TitleSection />
       <form

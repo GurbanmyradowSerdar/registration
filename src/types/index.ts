@@ -1,4 +1,5 @@
-import { ChangeEvent, HTMLInputTypeAttribute } from "react";
+import React from "react";
+import { RegisterOptions, UseFormRegister } from "react-hook-form";
 
 // ! class name interface
 export interface IClassName {
@@ -10,35 +11,28 @@ export interface IParentComponent extends IClassName {
   children: React.ReactNode;
 }
 
-// ! navigation component
-export interface INavigationComponent extends IClassName {
-  hasBackButton: boolean;
-  info: string;
-  step: string;
-}
-
-// ! aside
-export interface IAsideTextComponent extends IClassName {
-  text: string;
-}
-
 // ! main content
 export interface ITextProps extends IClassName {
   text: string;
-  disabled?: boolean;
 }
 
-// ! interactive wrapper component
-export interface IInteractiveWrapperProps extends IParentComponent {
-  pageIndex: number;
+// ! Option buttons props
+export interface IOptionButtonProps {
+  title: string;
+  text: string;
+  hasUserIcon: boolean;
+  props?: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;
 }
 
 // ! custom input
 export interface ICustomInputProps extends IClassName {
   name: string;
-  type?: HTMLInputTypeAttribute;
+  type?: React.HTMLInputTypeAttribute;
   value?: string;
-  onChange?: (e: ChangeEvent<unknown>) => void;
+  onChange?: (e: React.ChangeEvent<unknown>) => void;
   label: string;
   placeholder?: string;
   maxLength?: number;
@@ -46,8 +40,25 @@ export interface ICustomInputProps extends IClassName {
   anotherInput?: React.ReactNode;
 }
 
+// ! main input props
+export interface IMainInputProps {
+  props: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
+  label: string;
+  error?: string | undefined;
+  register: UseFormRegister<TFormInputsSecondPage>;
+  name: TSecondPageFormNames;
+  options?:
+    | RegisterOptions<TFormInputsSecondPage, TSecondPageFormNames>
+    | undefined;
+}
+
+type TSecondPageFormNames = "email" | "fullName" | "password" | "toggle";
+
 // ! 2 page content
-export type TFormikInitialValuesSecondPage = {
+export type TFormInputsSecondPage = {
   fullName: string;
   email: string;
   password: string;
@@ -65,3 +76,12 @@ export type TFormikInitialValuesThirdPage = {
 
 // ! atoms store
 export type TPageIndexState = 0 | 1 | 2 | 3;
+
+// ! 2 page form section props
+export interface ISecondPageFormProps {}
+
+// ! custom inputs props as password, checkbox
+export interface ICustomInputProps1 {
+  register: UseFormRegister<TFormInputsSecondPage>;
+  error?: string | undefined | null;
+}

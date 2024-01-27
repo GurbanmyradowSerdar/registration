@@ -10,6 +10,7 @@ export default defineConfig({
       { find: "data", replacement: "/src/data" },
       { find: "hooks", replacement: "/src/hooks" },
       { find: "types", replacement: "/src/types" },
+      { find: "utils", replacement: "/src/utils" },
       { find: "store", replacement: "/src/store" },
     ],
   },

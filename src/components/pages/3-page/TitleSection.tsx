@@ -1,6 +1,6 @@
-import Divider from "../../common/Divider";
-import MainTitle from "../../common/text/MainTitle";
-import SubtitleTextComponent from "../../common/text/SubtitleTextComponent";
+import Divider from "components/common/Divider";
+import MainTitle from "components/common/text/MainTitle";
+import SubtitleTextComponent from "components/common/text/SubtitleTextComponent";
 import { memo } from "react";
 
 function TitleSection() {

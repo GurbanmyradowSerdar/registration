@@ -1,9 +1,9 @@
 import { atom } from "recoil";
 import {
-  TFormikInitialValuesSecondPage,
+  TFormInputsSecondPage,
   TFormikInitialValuesThirdPage,
   TPageIndexState,
-} from "../types";
+} from "types";
 
 export const pageIndexState = atom<TPageIndexState>({
   key: "pageIndex",
@@ -24,7 +24,7 @@ export const pageIndexState = atom<TPageIndexState>({
   ],
 });
 
-export const credentialsState = atom<TFormikInitialValuesSecondPage>({
+export const credentialsState = atom<TFormInputsSecondPage>({
   key: "credentials",
   default: {
     toggle: false,
@@ -38,7 +38,7 @@ export const credentialsState = atom<TFormikInitialValuesSecondPage>({
         localStorage.setItem("credentials", JSON.stringify(param));
       });
       setSelf(() => {
-        const returnValue: TFormikInitialValuesSecondPage =
+        const returnValue: TFormInputsSecondPage =
           localStorage.getItem("credentials") !== null
             ? JSON.parse(localStorage.getItem("credentials") as string)
             : {

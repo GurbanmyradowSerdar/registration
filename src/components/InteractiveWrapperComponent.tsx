@@ -1,11 +1,7 @@
-import { IInteractiveWrapperProps } from "../types";
-import NavigationComponent from "./common/NavigationComponent";
-import { navigationInfoArr } from "../data";
+import { IParentComponent } from "types";
+import NavigationComponent from "components/common/NavigationComponent";
 
-const InteractiveWrapperComponent = ({
-  children,
-  pageIndex,
-}: IInteractiveWrapperProps) => {
+const InteractiveWrapperComponent = ({ children }: IParentComponent) => {
   return (
     <div
       className="flex-1 pt-[75px] pr-[91px] flex flex-col
@@ -13,9 +9,6 @@ const InteractiveWrapperComponent = ({
     max-lg:pt-0 max-lg:pr-0"
     >
       <NavigationComponent
-        hasBackButton={pageIndex === 0 ? false : true}
-        info={navigationInfoArr[pageIndex].info}
-        step={navigationInfoArr[pageIndex].step}
         className="pl-14
         max-xl:pl-12
         max-lg:pr-20 max-lg:mt-5
