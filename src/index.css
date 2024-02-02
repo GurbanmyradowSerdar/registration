@@ -8,7 +8,7 @@
 @layer components {
   /* ! aside component */
   .aside-component {
-    background-image: url(../public/buildings.jpg);
+    background-image: url(../public/buildings.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40vw 100%;
