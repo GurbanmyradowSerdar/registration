@@ -5,6 +5,7 @@ import {
   UseFormRegister,
   UseFormSetValue,
 } from "react-hook-form";
+import { Country as CountryCode } from "react-phone-number-input";
 
 // ! class name interface
 export interface IClassName {
@@ -104,8 +105,8 @@ type TThirdPageFormNames = "phoneNumber" | "address" | "countryOfResidence";
 
 export interface IPhoneInputProps {
   register: UseFormRegister<TFormInputsThirdPage>;
-  setCountry: any;
-  country: any;
+  setCountry: React.Dispatch<React.SetStateAction<CountryCode>>;
+  country: CountryCode;
   error?: string;
   setValue: UseFormSetValue<TFormInputsThirdPage>;
   getValues: UseFormGetValues<TFormInputsThirdPage>;

@@ -7,9 +7,9 @@ import { useChangeIndexPage } from "hooks/useChangeIndexPage.hooks";
 import { useGetStatesForSecondPage } from "hooks/useGetStatesForSecondPage.hooks";
 import { useMemo } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ISecondPageFormProps, TFormInputsSecondPage } from "types";
+import { TFormInputsSecondPage } from "types";
 
-export default function FormSection({}: ISecondPageFormProps) {
+export default function FormSection() {
   const { credentials, setCredentials } = useGetStatesForSecondPage();
   const { setIndex } = useChangeIndexPage();
 
