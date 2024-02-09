@@ -1,5 +1,5 @@
 import { ICustomInputProps1 } from "types";
-import { usePasswordVisibility } from "hooks/usePasswordVisibility";
+import { usePasswordVisibility } from "hooks/usePasswordVisibility.hooks.";
 
 export default function PasswordInput({ register, error }: ICustomInputProps1) {
   const { togglePasswordVisibility, visible } = usePasswordVisibility();

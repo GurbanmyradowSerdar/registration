@@ -1,4 +1,4 @@
-import { IMainInputProps } from "types";
+import { IMainInputThirdPageProps } from "types";
 
 const MainInput = ({
   props,
@@ -7,7 +7,7 @@ const MainInput = ({
   name,
   register,
   options,
-}: IMainInputProps) => {
+}: IMainInputThirdPageProps) => {
   return (
     <div className="flex flex-col gap-2">
       <label

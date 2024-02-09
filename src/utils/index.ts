@@ -1,14 +1,14 @@
 import { SetterOrUpdater } from "recoil";
 import {
   TFormInputsSecondPage,
-  TFormikInitialValuesThirdPage,
+  TFormInputsThirdPage,
   TPageIndexState,
 } from "types";
 
 function getPrevPageIndex(
   pageIndex: TPageIndexState,
   setCredentials: SetterOrUpdater<TFormInputsSecondPage>,
-  setInfo: SetterOrUpdater<TFormikInitialValuesThirdPage>
+  setInfo: SetterOrUpdater<TFormInputsThirdPage>
 ): TPageIndexState {
   switch (pageIndex) {
     case 1:

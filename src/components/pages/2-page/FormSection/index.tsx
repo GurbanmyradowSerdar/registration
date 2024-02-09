@@ -1,25 +1,26 @@
 import Divider from "components/common/Divider";
-import MainInput from "components/common/MainInput";
+import MainInput from "components/pages/2-page/FormSection/MainInput";
 import PrimaryButton from "components/common/buttons/PrimaryButton";
 import CheckBox from "components/pages/2-page/FormSection/CheckBox";
 import PasswordInput from "components/pages/2-page/FormSection/PasswordInput";
-import { useGetStatesFromSecondPage } from "hooks/useGetStatesFromSecondPage";
+import { useChangeIndexPage } from "hooks/useChangeIndexPage.hooks";
+import { useGetStatesForSecondPage } from "hooks/useGetStatesForSecondPage.hooks";
 import { useMemo } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ISecondPageFormProps, TFormInputsSecondPage } from "types";
 
 export default function FormSection({}: ISecondPageFormProps) {
-  const { credentials, setCredentials, setIndex } =
-    useGetStatesFromSecondPage();
+  const { credentials, setCredentials } = useGetStatesForSecondPage();
+  const { setIndex } = useChangeIndexPage();
 
-  const defaultValues = useMemo(
+  const initialValues = useMemo(
     () => ({
       fullName: credentials.fullName,
       email: credentials.email,
       password: credentials.password,
       toggle: credentials.toggle,
     }),
-    []
+    [credentials]
   );
 
   const {
@@ -27,7 +28,7 @@ export default function FormSection({}: ISecondPageFormProps) {
     handleSubmit,
     formState: { errors },
   } = useForm<TFormInputsSecondPage>({
-    defaultValues,
+    defaultValues: initialValues,
   });
 
   const onSubmit: SubmitHandler<TFormInputsSecondPage> = (data) => {

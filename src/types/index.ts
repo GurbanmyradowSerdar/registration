@@ -1,5 +1,10 @@
 import React from "react";
-import { RegisterOptions, UseFormRegister } from "react-hook-form";
+import {
+  RegisterOptions,
+  UseFormGetValues,
+  UseFormRegister,
+  UseFormSetValue,
+} from "react-hook-form";
 
 // ! class name interface
 export interface IClassName {
@@ -40,8 +45,16 @@ export interface ICustomInputProps extends IClassName {
   anotherInput?: React.ReactNode;
 }
 
+// ! 2 page content
+export type TFormInputsSecondPage = {
+  fullName: string;
+  email: string;
+  password: string;
+  toggle: boolean;
+};
+
 // ! main input props
-export interface IMainInputProps {
+export interface IMainInputSecondPageProps {
   props: React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -57,31 +70,52 @@ export interface IMainInputProps {
 
 type TSecondPageFormNames = "email" | "fullName" | "password" | "toggle";
 
-// ! 2 page content
-export type TFormInputsSecondPage = {
-  fullName: string;
-  email: string;
-  password: string;
-  toggle: boolean;
-};
-
 export type TVisible = "text" | "password";
-
-// ! 3 page content
-export type TFormikInitialValuesThirdPage = {
-  phoneNumber: string;
-  address: string;
-  countryOfResidence: string;
-};
-
-// ! atoms store
-export type TPageIndexState = 0 | 1 | 2 | 3;
-
-// ! 2 page form section props
-export interface ISecondPageFormProps {}
 
 // ! custom inputs props as password, checkbox
 export interface ICustomInputProps1 {
   register: UseFormRegister<TFormInputsSecondPage>;
   error?: string | undefined | null;
 }
+
+// ! 3 page content
+export type TFormInputsThirdPage = {
+  phoneNumber: string;
+  address: string;
+  countryOfResidence: string;
+};
+
+// ! main input props
+export interface IMainInputThirdPageProps {
+  props: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
+  label: string;
+  error?: string | undefined;
+  register: UseFormRegister<TFormInputsThirdPage>;
+  name: TThirdPageFormNames;
+  options?:
+    | RegisterOptions<TFormInputsThirdPage, TThirdPageFormNames>
+    | undefined;
+}
+
+type TThirdPageFormNames = "phoneNumber" | "address" | "countryOfResidence";
+
+export interface IPhoneInputProps {
+  register: UseFormRegister<TFormInputsThirdPage>;
+  setCountry: any;
+  country: any;
+  error?: string;
+  setValue: UseFormSetValue<TFormInputsThirdPage>;
+  getValues: UseFormGetValues<TFormInputsThirdPage>;
+}
+
+export interface ILocationInputProps {
+  register: UseFormRegister<TFormInputsThirdPage>;
+  error?: string;
+  getValues: UseFormGetValues<TFormInputsThirdPage>;
+}
+
+// ! atoms store
+export type TPageIndexState = 0 | 1 | 2 | 3;
