@@ -120,3 +120,21 @@ export interface ILocationInputProps {
 
 // ! atoms store
 export type TPageIndexState = 0 | 1 | 2 | 3;
+
+// ! 4 page content
+export interface IFormInputsFourthPage {
+  bvn: string;
+}
+
+export interface IBankNumberInputThirdPageProps {
+  props: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
+  label: string;
+  error?: string | undefined;
+  register: UseFormRegister<IFormInputsFourthPage>;
+  name: "bvn";
+  options?: RegisterOptions<IFormInputsFourthPage, "bvn"> | undefined;
+  isCorrectAnswer: boolean;
+}

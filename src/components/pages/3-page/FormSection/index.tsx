@@ -65,6 +65,7 @@ export default function FormSection() {
         register={register}
         setCountry={setCountry}
         getValues={getValues}
+        error={errors.phoneNumber?.message}
       />
       <MainInput
         label="Your address"
