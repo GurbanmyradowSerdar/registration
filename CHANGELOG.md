@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/GurbanmyradowSerdar/registration/compare/v0.0.1...v0.1.0) (2024-02-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* add new dev package
+
+### Bug Fixes
+
+* **types:** removed unused types ([8f6ebfd](https://github.com/GurbanmyradowSerdar/registration/commit/8f6ebfd655e946380df29d313c5eac4166dd313a))
+
+
+* add commitizen and its script ([007f36e](https://github.com/GurbanmyradowSerdar/registration/commit/007f36eb3d8c6bc7613331bb5ddc3d08f022dedc))
+
 ### 0.0.1 (2024-02-01)
 
 
